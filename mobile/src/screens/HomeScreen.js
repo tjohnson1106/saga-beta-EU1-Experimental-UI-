@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components/native";
 import { graphql, compose, withApollo } from "react-apollo";
-import { ActivityIndicator, FlatList, ImageBackground } from "react-native";
+import { ActivityIndicator, FlatList } from "react-native";
 import { connect } from "react-redux";
 
 import FeedCard from "../components/FeedCard/FeedCard";
@@ -93,17 +93,12 @@ class HomeScreen extends Component {
     // Pull in <FeedCard /> for static UI
     return (
       <Root>
-        <ImageBackground
-          source={require("../../assets/images/home_screen_background.jpeg")}
-          style={{ width: "100%", height: "100%" }}
-        >
-          <FlatList
-            contentContainerStyle={{ alignSelf: "stretch" }}
-            data={data.getTweets}
-            keyExtractor={item => item._id}
-            renderItem={this._renderItem}
-          />
-        </ImageBackground>
+        <FlatList
+          contentContainerStyle={{ alignSelf: "stretch" }}
+          data={data.getTweets}
+          keyExtractor={item => item._id}
+          renderItem={this._renderItem}
+        />
       </Root>
     );
   }

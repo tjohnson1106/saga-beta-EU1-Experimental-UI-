@@ -1,5 +1,4 @@
 import React from "react";
-import { ImageBackground } from "react-native";
 import styled from "styled-components/native";
 import { graphql, gql } from "react-apollo";
 import Placeholder from "rn-placeholder";
@@ -8,41 +7,24 @@ import FeedCardHeader from "./FeedCardHeader";
 import FeedCardBottom from "./FeedCardBottom";
 import FAVORITE_TWEET_MUTATION from "../../graphql/mutations/favoriteData";
 
-const ImageBackground = styled.Image`
+const Root = styled.View`
 /* prettier-ignore */
-min-height: 220;
-padding: 7px;
-width: 100%;
-/* prettier-ignore */
-shadowColor: ${props => props.theme.SECONDARY};
-/* prettier-ignore */
-shadowOffset: 0px 2px; 
-/* prettier-ignore */
-shadowRadius: 2;
-/* prettier-ignore */
-shadowOpacity:0.2;
-/* prettier-ignore */
-marginVertical: 5;
+  minHeight: 240;
+  /* prettier-ignore */
+  backgroundColor: ${props => props.theme.GRAY_REVISE};
+  width: 100%;
+  padding: 7px;
+  /* prettier-ignore */
+  shadowColor: ${props => props.theme.SECONDARY};
+  /* prettier-ignore */
+  shadowOffset: 0px 2px;
+  /* prettier-ignore */
+  shadowRadius: 2;
+  /* prettier-ignore */
+  shadowOpacity: 0.1;
+  /* prettier-ignore */
+  marginVertical: 5;
 `;
-
-// const Root = styled.View`
-// /* prettier-ignore */
-//   minHeight: 220;
-//   /* prettier-ignore */
-//   backgroundColor: ${props => props.theme.GRAY_REVISE};
-//   width: 100%;
-//   padding: 7px;
-//   /* prettier-ignore */
-//   shadowColor: ${props => props.theme.SECONDARY};
-//   /* prettier-ignore */
-//   shadowOffset: 0px 2px;
-//   /* prettier-ignore */
-//   shadowRadius: 2;
-//   /* prettier-ignore */
-//   shadowOpacity: 0.1;
-//   /* prettier-ignore */
-//   marginVertical: 5;
-// `;
 
 const CardContentContainer = styled.View`
   flex: 1;
